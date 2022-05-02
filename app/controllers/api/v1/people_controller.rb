@@ -1,7 +1,11 @@
-class Api::V1::PeopleController < ApplicationController
-  def index
-  end
+# frozen_string_literal: true
 
-  def show
+module Api
+  module V1
+    class PeopleController < ApplicationController
+      def index; end
+
+      def show; end
+    end
   end
 end
