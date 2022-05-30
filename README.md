@@ -1,26 +1,28 @@
-# README
+# Portal Vacina
 
-![image](https://user-images.githubusercontent.com/22120173/166248798-0e1613a4-c4ca-40ed-9c5f-5b6ea04c4a54.png)
+This repository was developed with the aim of improving knowledge of some ruby on rails concepts that are part of the development of an API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## About this project
 
-* Ruby version
+Portal Vacina is an API where it is possible to provide/obtain data on who has been vaccinated against COVID-19. The database can be represented similar to the figure below.
 
-* System dependencies
+![image](https://user-images.githubusercontent.com/22120173/171039280-25d16007-ec7f-4000-acb0-f819870a99a2.png)
 
-* Configuration
+## How it works
 
-* Database creation
 
-* Database initialization
+The user's permission will limit what can and cannot be accessed by the user. For now, there are 3 types of user:
 
-* How to run the test suite
+Common - Can only see all data from _Dose_ table
 
-* Services (job queues, cache servers, search engines, etc.)
+Health area - Can create data in _Dose_ table and see the others tables
 
-* Deployment instructions
+Government - Can CRUD data in all tables
 
-* ...
+
+
+## Configuration for development 
+
+> In developing...![image](https://user-images.githubusercontent.com/22120173/171042779-36b56fff-f6d4-4fba-93a6-3bab652bec49.png)
+
