@@ -9,7 +9,7 @@ RSpec.describe 'Cities', type: :request do
       post '/api/v1/cities/', params: { name: 'Test_2' }
     end
 
-    describe 'GET /api/v1/citites' do
+    describe 'GET /api/v1/cities' do
       it 'returns all the cities' do
         get '/api/v1/cities/'
 
@@ -39,7 +39,7 @@ RSpec.describe 'Cities', type: :request do
       end
     end
 
-    describe 'GET /api/v1/citites/:id' do
+    describe 'GET /api/v1/cities/:id' do
       let(:city1) { City.first }
 
       it 'returns only the selected city' do
@@ -59,7 +59,7 @@ RSpec.describe 'Cities', type: :request do
       end
     end
 
-    describe 'POST /api/v1/citites' do
+    describe 'POST /api/v1/cities' do
       it 'with valid params creates a new city' do
         expect do
           post '/api/v1/cities/', params: { name: 'IraLand' }
@@ -86,7 +86,7 @@ RSpec.describe 'Cities', type: :request do
       end
     end
 
-    describe 'PATCH /api/v1/citites/:id' do
+    describe 'PATCH /api/v1/cities/:id' do
       let(:city1) { City.first }
 
       it 'with valid params updates a city' do
