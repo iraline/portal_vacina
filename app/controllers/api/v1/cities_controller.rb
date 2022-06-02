@@ -22,6 +22,22 @@ module Api
           render json: city.errors
         end
       end
+
+      def update
+        city = City.find(params[:id])
+
+        if city.update(city_params)
+          render json: city, status: :accepted
+        else
+          render json: city.errors
+        end
+      end
+
+      private
+
+      def city_params
+        params.require(:city).permit(:name)
+      end
     end
   end
 end
