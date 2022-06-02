@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :people, only: %i[index show create]
-      resources :cities, :states
+      resources :cities, :states, :roles
     end
   end
 end
