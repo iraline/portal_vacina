@@ -2,20 +2,20 @@
 
 require 'rails_helper'
 
-describe City do
+describe Vaccine do
   it 'valide if has a name' do
-    city = City.create(name: 'City one')
-    expect(city).to be_valid
+    vaccine = Vaccine.create(name: 'Vaccine one')
+    expect(vaccine).to be_valid
   end
 
   it 'can not recieve a nil name' do
-    city = City.create(name: nil)
-    expect(city).to_not be_valid
+    vaccine = Vaccine.create(name: nil)
+    expect(vaccine).to_not be_valid
   end
 
   it 'name has to be unique' do
-    City.create(name: 'City one')
-    city = City.create(name: 'City one')
-    expect(city).to_not be_valid
+    Vaccine.create(name: 'Vaccine one')
+    vaccine = Vaccine.create(name: 'Vaccine one')
+    expect(vaccine).to_not be_valid
   end
 end

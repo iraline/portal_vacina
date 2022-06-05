@@ -2,20 +2,20 @@
 
 require 'rails_helper'
 
-describe City do
+describe State do
   it 'valide if has a name' do
-    city = City.create(name: 'City one')
-    expect(city).to be_valid
+    state = State.create(name: 'State one')
+    expect(state).to be_valid
   end
 
   it 'can not recieve a nil name' do
-    city = City.create(name: nil)
-    expect(city).to_not be_valid
+    state = State.create(name: nil)
+    expect(state).to_not be_valid
   end
 
   it 'name has to be unique' do
-    City.create(name: 'City one')
-    city = City.create(name: 'City one')
-    expect(city).to_not be_valid
+    State.create(name: 'State one')
+    state = State.create(name: 'State one')
+    expect(state).to_not be_valid
   end
 end
