@@ -97,8 +97,8 @@ RSpec.describe 'States', type: :request do
       end
 
       it 'with valid params returns a created response' do
-        post '/api/v1/states/', params: { name: 'IraLand' }
-        expect(response).to have_http_status(:created)
+        patch "/api/v1/states/#{state1.id}", params: { state: { name: 'IraLand' } }
+        expect(response).to have_http_status(:accepted)
       end
 
       it 'can not update a state with a empty name' do

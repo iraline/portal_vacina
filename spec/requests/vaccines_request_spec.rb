@@ -97,8 +97,8 @@ RSpec.describe 'Vaccines', type: :request do
       end
 
       it 'with valid params returns a created response' do
-        post '/api/v1/vaccines/', params: { name: 'IraLand' }
-        expect(response).to have_http_status(:created)
+        patch "/api/v1/vaccines/#{vaccine1.id}", params: { vaccine: { name: 'IraLand' } }
+        expect(response).to have_http_status(:accepted)
       end
 
       it 'can not update a vaccine with a empty name' do

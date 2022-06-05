@@ -97,8 +97,8 @@ RSpec.describe 'Unitys', type: :request do
       end
 
       it 'with valid params returns a created response' do
-        post '/api/v1/unities/', params: { name: 'IraLand' }
-        expect(response).to have_http_status(:created)
+        patch "/api/v1/unities/#{unity1.id}", params: { unity: { name: 'IraLand' } }
+        expect(response).to have_http_status(:accepted)
       end
 
       it 'can not update a unity with a empty name' do
