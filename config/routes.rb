@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :people
       resources :cities, :states, :roles, :vaccines, :unities
       resources :localities
+      resources :shots, except: [:update]
     end
   end
 end
