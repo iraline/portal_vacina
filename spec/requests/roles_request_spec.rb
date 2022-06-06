@@ -96,7 +96,7 @@ RSpec.describe 'Roles', type: :request do
         expect(role.name).to eq('IraLand')
       end
 
-      it 'with valid params returns a created response' do
+      it 'with valid params returns a accepted response' do
         patch "/api/v1/roles/#{role1.id}", params: { role: { name: 'IraLand' } }
         expect(response).to have_http_status(:accepted)
       end

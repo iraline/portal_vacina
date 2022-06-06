@@ -96,7 +96,7 @@ RSpec.describe 'Cities', type: :request do
         expect(city.name).to eq('IraLand')
       end
 
-      it 'with valid params returns a created response' do
+      it 'with valid params returns a accepted response' do
         patch "/api/v1/cities/#{city1.id}", params: { city: { name: 'IraLand' } }
         expect(response).to have_http_status(:accepted)
       end

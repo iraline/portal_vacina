@@ -96,7 +96,7 @@ RSpec.describe 'States', type: :request do
         expect(state.name).to eq('IraLand')
       end
 
-      it 'with valid params returns a created response' do
+      it 'with valid params returns a accepted response' do
         patch "/api/v1/states/#{state1.id}", params: { state: { name: 'IraLand' } }
         expect(response).to have_http_status(:accepted)
       end

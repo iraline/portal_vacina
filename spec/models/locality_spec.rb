@@ -3,9 +3,8 @@
 require 'rails_helper'
 
 describe Locality do
-
   it 'can not recieve a nil city or state' do
-    locality = Locality.create(state_id: nil,city_id: nil)
+    locality = Locality.create(state_id: nil, city_id: nil)
     expect(locality).to_not be_valid
   end
 
@@ -13,8 +12,8 @@ describe Locality do
     city = City.create(name: 'City one')
     state = State.create(name: 'State one')
 
-    Locality.create(state_id: city.id,city_id: state.id)
-    locality = Locality.create(state_id: city.id,city_id: state.id)
+    Locality.create(state_id: city.id, city_id: state.id)
+    locality = Locality.create(state_id: city.id, city_id: state.id)
     expect(locality).to_not be_valid
   end
 end

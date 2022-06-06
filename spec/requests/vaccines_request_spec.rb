@@ -96,7 +96,7 @@ RSpec.describe 'Vaccines', type: :request do
         expect(vaccine.name).to eq('IraLand')
       end
 
-      it 'with valid params returns a created response' do
+      it 'with valid params returns a accepted response' do
         patch "/api/v1/vaccines/#{vaccine1.id}", params: { vaccine: { name: 'IraLand' } }
         expect(response).to have_http_status(:accepted)
       end

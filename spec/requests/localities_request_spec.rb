@@ -7,7 +7,6 @@ RSpec.describe 'Localities', type: :request do
     city = City.create(name: 'City 1')
     state = State.create(name: 'State 1')
 
-    # let(:locality) { Locality.create(state_id: state.id , city_id: city.id) }
     Locality.create(state_id: state.id, city_id: city.id)
   end
 
@@ -100,7 +99,7 @@ RSpec.describe 'Localities', type: :request do
       expect(updated_locality.city.name).to eq(city.name)
     end
 
-    it 'with valid params returns a XXXXXX response' do
+    it 'with valid params returns a accepted response' do
       patch "/api/v1/localities/#{locality.id}", params: { locality: { city_id: city.id } }
 
       expect(response).to have_http_status(:accepted)
@@ -112,12 +111,6 @@ RSpec.describe 'Localities', type: :request do
       updated_locality = Locality.find_by_id(locality.id)
 
       expect(updated_locality.city.name).to eq(locality.city.name)
-    end
-
-    it 'with invalid params returns a XXXXX response' do
-      patch "/api/v1/localities/#{locality.id}", params: { locality: { city_id: nil } }
-
-      expect(response).to have_http_status(:success)
     end
   end
 end

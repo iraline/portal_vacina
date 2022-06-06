@@ -96,7 +96,7 @@ RSpec.describe 'Unitys', type: :request do
         expect(unity.name).to eq('IraLand')
       end
 
-      it 'with valid params returns a created response' do
+      it 'with valid params returns a accepted response' do
         patch "/api/v1/unities/#{unity1.id}", params: { unity: { name: 'IraLand' } }
         expect(response).to have_http_status(:accepted)
       end
